@@ -62,7 +62,7 @@ class ArraysTests {
 		int actual[] = new int[6];
 		int expected[] = {1, 2, 3, -10, 4, 5};
 		// TODO make sure the following assert will pass using System.arraycopy
-		System.arraycopy(expected, 0, actual, 0, 2);
+		System.arraycopy(expected, 0, actual, 0, 3);
 		System.arraycopy(expected, 4, actual, 4, 2);
 		actual[3] = -10;
 		assertArrayEquals(expected, actual);
