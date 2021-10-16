@@ -61,7 +61,6 @@ class ArraysTests {
 		int ar[] = {1, 2, 3, 4, 5};
 		int actual[] = new int[6];
 		int expected[] = {1, 2, 3, -10, 4, 5};
-		// TODO make sure the following assert will pass using System.arraycopy
 		System.arraycopy(expected, 0, actual, 0, 3);
 		System.arraycopy(expected, 4, actual, 4, 2);
 		actual[3] = -10;
@@ -70,17 +69,29 @@ class ArraysTests {
 	
 	@Test
 	void arraysCopyOf() {
-		// TODO write tests for Arrays.copyOf functionality according to the doc
+		int expected[] = {1, 2, 3, 4, 5};
+		int actual[] = Arrays.copyOf(expected, expected.length);
+		assertArrayEquals(expected, actual);
 	}
 	
 	@Test
 	void arraysCopyOfRange() {
-		// TODO write tests for Arrays.copyOfRange functionality according to the doc
+		int ar[] = {1, 2, 3, 4, 5};
+		int expected[] = {3, 4};
+		int actual[] = Arrays.copyOfRange(ar, 2, 4);
+		assertArrayEquals(expected, actual);
 	}
 	
 	@Test
 	void arraysBinarySearch() {
-		// TODO write tests for Arrays.binarySearch functionality according to the doc
+		int ar[] = {1, 2, 3, 4, 5};
+		int expected = 3;
+		int actualHas = Arrays.binarySearch(ar, 4);
+		assertEquals(expected, actualHas);
+		expected = -6;
+		int actualHasnt = Arrays.binarySearch(ar, 6);
+		assertEquals(expected, actualHasnt);
+		
 	}
 
 }
