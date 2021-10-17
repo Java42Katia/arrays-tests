@@ -51,6 +51,7 @@ class ArraysTests {
 		int ar[] = {1, 2, 3, 4, 5};
 		int actual[] = new int[4];
 		int expected[] = {1, 2, 4, 5};
+		//[YG] - better to introduce variable with the index of being removed element
 		System.arraycopy(expected, 0, actual, 0, 2);
 		System.arraycopy(expected, 2, actual, 2, 2);
 		assertArrayEquals(expected, actual);
@@ -61,6 +62,7 @@ class ArraysTests {
 		int ar[] = {1, 2, 3, 4, 5};
 		int actual[] = new int[6];
 		int expected[] = {1, 2, 3, -10, 4, 5};
+		//[YG] - better to introduce variable with the index for inserting at
 		System.arraycopy(expected, 0, actual, 0, 3);
 		System.arraycopy(expected, 4, actual, 4, 2);
 		actual[3] = -10;
@@ -71,6 +73,7 @@ class ArraysTests {
 	void arraysCopyOf() {
 		int expected[] = {1, 2, 3, 4, 5};
 		int actual[] = Arrays.copyOf(expected, expected.length);
+		//[YG] better to introduce int ar[] = {.....} and three expected arrays for three different cases: length == ar.lemgth, length < ar.length and length > ar.length
 		assertArrayEquals(expected, actual);
 	}
 	
